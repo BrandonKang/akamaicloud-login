@@ -1,5 +1,7 @@
 # akamaicloud-login
-Receive Akamai Cloud(Linode) login events via Slack Channel
+Receive Akamai Cloud(Linode) login events via Slack Channel.<br>
+Linode Logins API returns a collection of successful logins for all users on the account during the last 90 days. <br>
+More API information: https://techdocs.akamai.com/linode-api/reference/get-account-logins
 
 # Basic Version
 This script periodically fetches login attempts from the Linode API and sends notifications to a specified Slack channel. It uses the schedule library to run the fetch_and_send_logins function every 30 seconds.<br> 
