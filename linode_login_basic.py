@@ -8,7 +8,7 @@ linode_api_url = 'https://api.linode.com/v4/account/logins'
 bearer_token = '[YOUR_LINODE_API_TOKEN]'
 
 # Slack Webhook URL
-slack_webhook_url = 'https://hooks.slack.com/services/[YOUR_SLACK_CHANNEL_URL]'
+slack_webhook_url = 'https://hooks.slack.com/services/[YOUR_SLACK_WEBHOOK_URL]'
 
 # Variable to store the last ID since the last call
 last_id = 0
