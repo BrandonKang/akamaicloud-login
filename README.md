@@ -10,15 +10,15 @@ The script runs indefinitely, continuously checking for new login attempts and p
 # Advanced Version
 Differences from the basic version:
 
-Message Formatting:
+**Message Formatting**
 The advanced version uses Slack's block kit for message formatting, creating more structured and visually appealing messages. 
 Each login attempt is represented as a block with fields, and a divider is added between entries.
 The previous code sends a simple text message without advanced formatting.
 
-Conditional Coloring:
+**Conditional Coloring**
 The advanced version includes a color indicator for each login attempt based on the status (successful or not), though the color is set but not actually applied in the blocks.
 
-Error Handling:
+**Error Handling**
 The advanced version attempts to print the response JSON if the message posting fails and includes a JSON decode error handling, which the previous code lacks.
 Code Structure:
 
