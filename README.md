@@ -4,6 +4,7 @@ Receive Akamai Cloud(Linode) login events via Slack Channel
 # Basic Version
 This script periodically fetches login attempts from the Linode API and sends notifications to a specified Slack channel.<br> 
 It uses the schedule library to run the fetch_and_send_logins function every 30 seconds.<br> 
+
 This function calls the Linode API to retrieve login attempts, filters new logins since the last call, and sends a formatted message with the login details to Slack using a webhook URL. The script runs indefinitely, continuously checking for new login attempts and posting them to Slack.<br> 
 
 ![Example Image](images/basic.png)
@@ -26,4 +27,5 @@ Code Structure:
 ![Example Image](images/advanced.png)
 
 The advanced version's message construction uses a list of dictionaries for Slack blocks, making it more extensible and maintainable compared to the plain text construction in the basic version.<br> 
+
 These improvements make the new script more user-friendly and informative when integrating with Slack, providing clearer and better-organized login attempt notifications.
