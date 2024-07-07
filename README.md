@@ -23,7 +23,6 @@ The advanced version includes a color indicator for each login attempt based on 
 
 **Error Handling**<br> 
 The advanced version attempts to print the response JSON if the message posting fails and includes a JSON decode error handling, which the previous code lacks.
-Code Structure:
 
 ![Example Image](images/advanced.png)
 
