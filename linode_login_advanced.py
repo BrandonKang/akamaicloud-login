@@ -29,45 +29,48 @@ def fetch_and_send_logins():
     if new_logins:
         last_id = max(login['id'] for login in new_logins)
 
-        # Create Slack message blocks
-        blocks = []
+        # Create Slack attachment message
+        attachments = []
         for login in new_logins:
-            color = "#2eb886" if login['status'] == "successful" else "#e01e5a"
-            blocks.append({
-                "type": "section",
+            color = "good" if login['status'] == "successful" else "danger"
+            attachments.append({
+                "color": color,
                 "fields": [
                     {
-                        "type": "mrkdwn",
-                        "text": f"*ID:* {login['id']}"
+                        "title": "ID",
+                        "value": login['id'],
+                        "short": True
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": f"*Datetime:* {login['datetime']}"
+                        "title": "Datetime",
+                        "value": login['datetime'],
+                        "short": True
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": f"*IP:* {login['ip']}"
+                        "title": "IP",
+                        "value": login['ip'],
+                        "short": True
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": f"*Username:* {login['username']}"
+                        "title": "Username",
+                        "value": login['username'],
+                        "short": True
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": f"*Status:* {login['status']}"
+                        "title": "Status",
+                        "value": login['status'],
+                        "short": True
                     },
                     {
-                        "type": "mrkdwn",
-                        "text": f"*Restricted:* {login['restricted']}"
+                        "title": "Restricted",
+                        "value": str(login['restricted']),
+                        "short": True
                     }
                 ]
             })
-            blocks.append({
-                "type": "divider"
-            })
 
         slack_message = {
-            "blocks": blocks
+            "attachments": attachments
         }
 
         response = requests.post(slack_webhook_url, data=json.dumps(slack_message), headers={'Content-Type': 'application/json'})
